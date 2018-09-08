@@ -15,7 +15,7 @@
   </div>
 
   <div *ngIf="event.type == 'transaction'" class="transaction-item">
-    <div class="transaction-item_main">
+    <div class="transaction-item_main" (click)="onClick(event)">
 
       <div class="left">
         <span [ngClass]="{
@@ -33,7 +33,7 @@
       </div>
 
     </div>
-    <div class="transaction-item_more">
+    <div class="transaction-item_more" [class.active]="event.active">
       <p>{{ event.description }}</p>
       <button class="delete">Удалить</button>
     </div>

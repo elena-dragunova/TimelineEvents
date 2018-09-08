@@ -94,6 +94,18 @@
   padding-left:10px;
 }
 
+.transaction-item_more {
+  display: none;
+  padding-top:10px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-item_more.active {
+  display: flex;
+}
+
 .delete {
   display: block;
   margin-right:0;
