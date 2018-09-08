@@ -1,0 +1,10 @@
+<div *ngFor="let transaction of transactions" class="transaction-item">
+  <p>
+    <span>{{ transaction.flow }}</span>
+    <span>{{ transaction.sum }}</span>
+    <span>{{ transaction.currency }}</span>
+    <span>{{ transaction.date }}</span>
+    <span>{{ transaction.person }}</span>
+  </p>
+  <p>{{ transaction.description }}</p>
+</div>

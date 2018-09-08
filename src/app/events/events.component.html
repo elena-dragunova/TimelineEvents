@@ -1,0 +1,24 @@
+<div class="events" *ngFor="let event of events">
+
+  <div *ngIf="event.type == 'news'">
+    <h4>{{ event.title }}</h4>
+    <p>{{ event.date }}</p>
+
+    <div class="news-item_more">
+      <p>{{ event.content }}</p>
+      <button class="news_read">Ознакомлен</button>
+    </div>
+  </div>
+
+  <div *ngIf="event.type == 'transaction'">
+    <p>
+      <span>{{ event.flow }}</span>
+      <span>{{ event.sum }}</span>
+      <span>{{ event.currency }}</span>
+      <span>{{ event.date }}</span>
+      <span>{{ event.person }}</span>
+    </p>
+    <p>{{ event.description }}</p>
+  </div>
+
+</div>

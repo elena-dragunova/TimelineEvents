@@ -1,0 +1,12 @@
+<div *ngFor="let item of news" class="news-item">
+    <h4>{{ item.title }}</h4>
+    <p>{{ item.date }}</p>
+
+    <div class="news-item_more">
+        <p>{{ item.content }}</p>
+        <button class="news_read">Ознакомлен</button>
+    </div>
+</div>
+
+
+
