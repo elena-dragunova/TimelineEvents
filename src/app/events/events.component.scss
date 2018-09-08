@@ -1,0 +1,23 @@
+.news-item {
+  margin-bottom:20px;
+}
+
+.news-item_title {
+  padding: 20px;
+  background-color: #e2e1ff;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items:center;
+  cursor: pointer;
+}
+
+.news-item_title h4 {
+  color: #0d26ff;
+  font-size:1.4em;
+}
+
+.date {
+  font-size:0.8em;
+  color: #888;
+}

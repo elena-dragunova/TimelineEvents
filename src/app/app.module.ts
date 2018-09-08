@@ -13,7 +13,7 @@ import { EventsComponent } from './events/events.component';
     AppComponent,
     TransactionsComponent,
     NewsComponent,
-    EventsComponent
+    EventsComponent,
   ],
   imports: [
     BrowserModule

@@ -7,12 +7,12 @@ import { EVENTS } from '../common/mock-events';
   styleUrls: ['./events.component.scss']
 })
 export class EventsComponent implements OnInit {
-
   events = EVENTS;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
