@@ -9,6 +9,10 @@ import { EVENTS } from '../common/mock-events';
 export class EventsComponent implements OnInit {
   events = EVENTS;
 
+  onClick(event) {
+    event.active = !event.active;
+  }
+
   constructor() { }
 
   ngOnInit() {

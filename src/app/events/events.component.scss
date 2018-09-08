@@ -1,3 +1,5 @@
+
+
 .news-item {
   margin-bottom:20px;
 }
@@ -20,4 +22,91 @@
 .date {
   font-size:0.8em;
   color: #888;
+}
+
+.news-item_more {
+  padding-top:10px;
+  display: none;
+}
+
+.news-item_more.active {
+  display: block;
+}
+
+.news_read {
+  border: none;
+  border-radius: 10px;
+  width:180px;
+  height:40px;
+  color: #fff;
+  background-color: #0d26ff;
+  text-transform: uppercase;
+  margin-top:10px;
+  outline:none;
+  cursor: pointer;
+}
+
+.news_read:hover,
+.news_read:focus,
+.news_read:active {
+  background-color: lighten(#0d26ff, 20%);
+}
+
+.news_read.on {
+  background-color: #32a012
+}
+
+.transaction-item {
+  margin-bottom:10px;
+  padding-bottom:10px;
+  border-bottom:1px solid #0d26ff;
+}
+
+.transaction-item_main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.transaction-item .inflow {
+  color: #379427;
+  font-size:1.5em;
+  font-weight:700;
+  padding-right:10px;
+}
+
+.transaction-item .outflow {
+  color: red;
+  font-size:2em;
+  font-weight:700;
+  padding-right:10px;
+}
+
+.transaction-item_sum {
+  display: inline-block;
+  width:50px;
+  text-align: right;
+}
+
+.transaction-item_person {
+  font-size:1.2em;
+  padding-left:10px;
+}
+
+.delete {
+  display: block;
+  margin-right:0;
+  margin-left:auto;
+  width:180px;
+  height:40px;
+  margin-top:10px;
+  border-radius: 10px;
+  background-color: red;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  outline:none;
+  cursor: pointer;
 }

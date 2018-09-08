@@ -1,13 +1,13 @@
 <div class="events" *ngFor="let event of events">
 
-  <div *ngIf="event.type == 'news'" class="news-item">
+  <div *ngIf="event.type == 'news'" class="news-item" (click)="onClick(event)">
 
     <div class="news-item_title">
       <h4>{{ event.title }}</h4>
       <p class="date">{{ event.date }}</p>
     </div>
 
-    <div class="news-item_more">
+    <div class="news-item_more" [class.active]="event.active">
       <p>{{ event.content }}</p>
       <button class="news_read">Ознакомлен</button>
     </div>
@@ -15,14 +15,29 @@
   </div>
 
   <div *ngIf="event.type == 'transaction'" class="transaction-item">
-    <p>
-      <span>{{ event.flow }}</span>
-      <span>{{ event.sum }}</span>
-      <span>{{ event.currency }}</span>
-      <span class="date">{{ event.date }}</span>
-      <span>{{ event.person }}</span>
-    </p>
-    <p>{{ event.description }}</p>
+    <div class="transaction-item_main">
+
+      <div class="left">
+        <span [ngClass]="{
+        'inflow': event.flow === '+',
+        'outflow': event.flow === '-'
+      }" >{{ event.flow }}</span>
+        <span class="transaction-item_sum">{{ event.sum }}</span>
+        <span>{{ event.currency }}</span>
+      </div>
+
+      <div class="right">
+        <span class="date">{{ event.date }}</span>
+        <span class="transaction-item_person">{{ event.person }}</span>
+
+      </div>
+
+    </div>
+    <div class="transaction-item_more">
+      <p>{{ event.description }}</p>
+      <button class="delete">Удалить</button>
+    </div>
+
   </div>
 
 </div>
