@@ -1,15 +1,15 @@
 <div class="events" *ngFor="let event of events">
 
-  <div *ngIf="event.type == 'news'" class="news-item" (click)="onClick(event)">
+  <div *ngIf="event.type == 'news'" class="news-item" >
 
-    <div class="news-item_title">
+    <div class="news-item_title" (click)="onClick(event)">
       <h4>{{ event.title }}</h4>
       <p class="date">{{ event.date }}</p>
     </div>
 
     <div class="news-item_more" [class.active]="event.active">
       <p>{{ event.content }}</p>
-      <button class="news_read">Ознакомлен</button>
+      <button class="news_read" (click)="toggleRead(event)" [class.on]="event.read">Ознакомлен</button>
     </div>
 
   </div>

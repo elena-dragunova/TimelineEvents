@@ -13,6 +13,10 @@ export class EventsComponent implements OnInit {
     event.active = !event.active;
   }
 
+  toggleRead(event) {
+    event.read = !event.read;
+  }
+
   constructor() { }
 
   ngOnInit() {
