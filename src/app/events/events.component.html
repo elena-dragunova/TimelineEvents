@@ -35,7 +35,7 @@
     </div>
     <div class="transaction-item_more" [class.active]="event.active">
       <p>{{ event.description }}</p>
-      <button class="delete">Удалить</button>
+      <button class="delete" (click)="deleteEvent(event)">Удалить</button>
     </div>
 
   </div>

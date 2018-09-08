@@ -17,6 +17,11 @@ export class EventsComponent implements OnInit {
     event.read = !event.read;
   }
 
+  deleteEvent(event) {
+    let ind = EVENTS.indexOf(event);
+    EVENTS.splice(ind, 1);
+  }
+
   constructor() { }
 
   ngOnInit() {
