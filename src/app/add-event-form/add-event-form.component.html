@@ -1,0 +1,83 @@
+<div>
+    <h4>Добавить событие</h4>
+    <form>
+        <p>Выберите тип события:</p>
+        <select ngModel name="selectType" #selectType="ngModel" (change)="selectEventType(selectType)">
+            <option value="news">Новость</option>
+            <option value="transaction">Финансовая транзакция</option>
+        </select>
+    </form>
+
+
+    <form #newsForm="ngForm" (submit)="submitNews(newsForm)" class="add-event add-news" *ngIf="addingType === 'news'">
+
+        <div class="form-field">
+            <label for="newsTitle">Заголовок новости</label>
+            <input type="text" ngModel name="newsTitle" #newsTitle="ngModel" id="newsTitle" required>
+        </div>
+
+        <div *ngIf="newsTitle.touched && newsTitle.invalid">Нужно ввести заголовок для новости.</div>
+
+        <div class="form-field">
+            <label for="newsContent">Содержание новости</label>
+            <textarea ngModel name="newsContent" #newsContent="ngModel" id="newsContent" required></textarea>
+        </div>
+
+        <div *ngIf="newsContent.touched && newsContent.invalid">Нужно ввести содержание новости.</div>
+
+        <button type="submit" class="submit-btn" [disabled]="newsForm.invalid">Добавить</button>
+
+    </form>
+
+    <form #transactionForm="ngForm" (submit)="submitTransaction(transactionForm)" class="add-event add-transaction"
+          *ngIf="addingType === 'transaction'">
+
+        <div class="form-field">
+            <p>Выберите, приход или расход</p>
+            <select ngModel name="selectFlow" #selectFlow="ngModel" required>
+                <option value="+">приход</option>
+                <option value="-">расход</option>
+            </select>
+        </div>
+
+        <div *ngIf="selectFlow.touched && selectFlow.invalid">Нужно выбрать приход или расход.</div>
+
+        <div class="form-field">
+            <p>Выберите валюту</p>
+            <select ngModel name="selectCurrency" #selectCurrency="ngModel"
+                    required>
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="RUB">RUB</option>
+            </select>
+        </div>
+
+        <div *ngIf="selectCurrency.touched && selectCurrency.invalid">Нужно выбрать валюту.</div>
+
+        <div class="form-field">
+            <label for="sum">Сумма</label>
+            <input type="number" ngModel name="sum" #sum="ngModel" id="sum" required>
+        </div>
+
+        <div *ngIf="sum.touched && sum.invalid">Нужно ввести сумму.</div>
+
+        <div class="form-field">
+            <label for="person">Контрагент</label>
+            <input type="text" ngModel name="person" #person="ngModel" id="person" required>
+        </div>
+
+        <div *ngIf="person.touched && person.invalid">Нужно ввести контрагента.</div>
+
+        <div class="form-field">
+            <label for="description">Описание</label>
+            <input type="text" ngModel name="description" #description="ngModel" id="description" required>
+        </div>
+
+        <div *ngIf="description.touched && description.invalid">Нужно ввести описание транзакции.</div>
+
+        <button type="submit" class="submit-btn" [disabled]="transactionForm.invalid">Добавить</button>
+
+
+    </form>
+
+</div>

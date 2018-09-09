@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EVENTS } from '../common/mock-events';
 
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
