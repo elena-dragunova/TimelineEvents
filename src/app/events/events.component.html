@@ -1,6 +1,6 @@
 <div class="events">
-  <form class="sorting">
-    <p>Сортировать по: </p>
+  <form class="sorting form-field select-field">
+    <label>Сортировать по: </label>
     <select ngModel name="select" #select="ngModel" (change)="sortEvents(select)">
       <option value="type">типу</option>
       <option value="date">дате</option>
@@ -35,9 +35,8 @@
         </div>
 
         <div class="right">
-          <span class="date">{{ event.date }}</span>
           <span class="transaction-item_person">{{ event.person }}</span>
-
+          <span class="date">{{ event.date }}</span>
         </div>
 
       </div>
