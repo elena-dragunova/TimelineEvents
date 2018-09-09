@@ -1,43 +1,54 @@
-<div class="events" *ngFor="let event of events">
+<div class="events">
+  <form class="sorting">
+    <p>Сортировать по: </p>
+    <select ngModel name="select" #select="ngModel" (change)="log(select)">
+      <option value="type">типу</option>
+      <option value="date">дате</option>
+    </select>
+  </form>
+  <div class="event" *ngFor="let event of events">
 
-  <div *ngIf="event.type == 'news'" class="news-item" >
+    <div *ngIf="event.type == 'news'" class="news-item" >
 
-    <div class="news-item_title" (click)="onClick(event)">
-      <h4>{{ event.title }}</h4>
-      <p class="date">{{ event.date }}</p>
+      <div class="news-item_title" (click)="onClick(event)">
+        <h4>{{ event.title }}</h4>
+        <p class="date">{{ event.date }}</p>
+      </div>
+
+      <div class="news-item_more" [class.active]="event.active">
+        <p>{{ event.content }}</p>
+        <button class="news_read" (click)="toggleRead(event)" [class.on]="event.read">Ознакомлен</button>
+      </div>
+
     </div>
 
-    <div class="news-item_more" [class.active]="event.active">
-      <p>{{ event.content }}</p>
-      <button class="news_read" (click)="toggleRead(event)" [class.on]="event.read">Ознакомлен</button>
-    </div>
+    <div *ngIf="event.type == 'transaction'" class="transaction-item">
+      <div class="transaction-item_main" (click)="onClick(event)">
 
-  </div>
-
-  <div *ngIf="event.type == 'transaction'" class="transaction-item">
-    <div class="transaction-item_main" (click)="onClick(event)">
-
-      <div class="left">
+        <div class="left">
         <span [ngClass]="{
         'inflow': event.flow === '+',
         'outflow': event.flow === '-'
       }" >{{ event.flow }}</span>
-        <span class="transaction-item_sum">{{ event.sum }}</span>
-        <span>{{ event.currency }}</span>
+          <span class="transaction-item_sum">{{ event.sum }}</span>
+          <span>{{ event.currency }}</span>
+        </div>
+
+        <div class="right">
+          <span class="date">{{ event.date }}</span>
+          <span class="transaction-item_person">{{ event.person }}</span>
+
+        </div>
+
+      </div>
+      <div class="transaction-item_more" [class.active]="event.active">
+        <p>{{ event.description }}</p>
+        <button class="delete" (click)="deleteEvent(event)">Удалить</button>
       </div>
 
-      <div class="right">
-        <span class="date">{{ event.date }}</span>
-        <span class="transaction-item_person">{{ event.person }}</span>
-
-      </div>
-
-    </div>
-    <div class="transaction-item_more" [class.active]="event.active">
-      <p>{{ event.description }}</p>
-      <button class="delete" (click)="deleteEvent(event)">Удалить</button>
     </div>
 
   </div>
 
 </div>
+

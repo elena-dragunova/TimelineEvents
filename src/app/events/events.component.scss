@@ -122,3 +122,18 @@
   outline:none;
   cursor: pointer;
 }
+
+.sorting {
+  margin-bottom:20px;
+}
+
+.sorting p {
+  display: inline-block;
+}
+
+.sorting select {
+  width:100px;
+  height:40px;
+  outline:none;
+  padding-left:6px;
+}

@@ -3,7 +3,7 @@ import {Transaction} from "./transaction";
 export const TRANSACTIONS: Transaction[] = [
     {
         type: "transaction",
-        date: "01.02.18",
+        date: "2018-01-02",
         sum: 2500,
         currency: "USD",
         flow: "+",
@@ -12,7 +12,7 @@ export const TRANSACTIONS: Transaction[] = [
     },
     {
         type: "transaction",
-        date: "05.05.18",
+        date: "2018-05-05",
         sum: 1000,
         currency: "RUB",
         flow: "-",
@@ -21,7 +21,7 @@ export const TRANSACTIONS: Transaction[] = [
     },
     {
         type: "transaction",
-        date: "06.03.18",
+        date: "2015-12-01",
         sum: 1500,
         currency: "EUR",
         flow: "+",
