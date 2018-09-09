@@ -22,12 +22,11 @@ export class EventsComponent implements OnInit {
     EVENTS.splice(ind, 1);
   }
 
-  log(select) {
-    //let sorting = select.viewMode;
+  sortEvents(select) {
 
-    function compareByType(a,b) {
-      let a = a.type;
-      let b = b.type;
+    function compareByType(el1, el2) {
+      let a = el1.type;
+      let b = el2.type;
 
 
       let comparison = 0;
@@ -39,23 +38,23 @@ export class EventsComponent implements OnInit {
       return comparison;
     }
 
-    function compareByDate(a, b) {
-      let a = a.date;
-      let b = b.date;
+    function compareByDate(elem1, elem2) {
+      let c = elem1.date;
+      let d = elem2.date;
 
 
       let comparison = 0;
-      if (a > b) {
+      if (c > d) {
         comparison = 1;
-      } else if (a < b) {
+      } else if (c < d) {
         comparison = -1;
       }
       return comparison * -1;
     }
 
-    if (select.viewModel === 'type') {
+    if (select.value === 'type') {
       this.events = EVENTS.sort(compareByType);
-    } else if (select.viewModel === 'date') {
+    } else if (select.value === 'date') {
       this.events = EVENTS.sort(compareByDate);
     } else {
       console.log("Something went wrong...")

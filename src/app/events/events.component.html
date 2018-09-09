@@ -1,7 +1,7 @@
 <div class="events">
   <form class="sorting">
     <p>Сортировать по: </p>
-    <select ngModel name="select" #select="ngModel" (change)="log(select)">
+    <select ngModel name="select" #select="ngModel" (change)="sortEvents(select)">
       <option value="type">типу</option>
       <option value="date">дате</option>
     </select>
