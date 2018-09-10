@@ -3,8 +3,6 @@ import {NgModule} from '@angular/core';
 
 
 import {AppComponent} from './app.component';
-import {TransactionsComponent} from './transactions/transactions.component';
-import {NewsComponent} from './news/news.component';
 import {EventsComponent} from './events/events.component';
 import { AddEventFormComponent } from './add-event-form/add-event-form.component';
 import {FormsModule} from "@angular/forms";
@@ -12,8 +10,6 @@ import {FormsModule} from "@angular/forms";
 @NgModule({
     declarations: [
         AppComponent,
-        TransactionsComponent,
-        NewsComponent,
         EventsComponent,
         AddEventFormComponent,
     ],
