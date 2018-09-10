@@ -17,11 +17,13 @@
 .news-item_title h4 {
   color: #0d26ff;
   font-size:1.4em;
+  padding-right: 20px;
 }
 
 .date {
   font-size:0.8em;
   color: #888;
+  white-space: nowrap;
 }
 
 .news-item_more {
@@ -103,6 +105,11 @@
   align-items: center;
 }
 
+.transaction-item_more p {
+  width: calc(100% - 180px);
+  padding-right: 20px;
+}
+
 .transaction-item_more.active {
   display: flex;
 }
@@ -124,6 +131,22 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 700px) {
+  .transaction-item_more {
+    flex-flow: column nowrap;
+  }
+  .transaction-item_more p {
+    width: 100%;
+    padding-right: 0;
+  }
+}
 
-
+@media screen and (max-width: 480px) {
+  .transaction-item_main {
+    flex-flow: column nowrap;
+  }
+  .news-item_title h4 {
+    font-size: 1.2em;
+  }
+}
 

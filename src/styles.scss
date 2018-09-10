@@ -32,3 +32,16 @@ select {
   background-color: #fff;
   padding:0 6px;
 }
+
+@media screen and (max-width: 1320px) {
+  .container {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  select {
+    width: 250px;
+  }
+}
